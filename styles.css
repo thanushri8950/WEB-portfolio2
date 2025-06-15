@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* styles.css */
 * {
   margin: 0;
   padding: 0;
@@ -6,81 +6,34 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
-  background: #fff0f4; /* blush pink */
+  font-family: 'Quicksand', 'Segoe UI', sans-serif;
+  background-color: #fff0f4;
   color: #3e3e3e;
-  overflow-x: hidden;
-  cursor: none; /* hide default cursor */
-}
-
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-
-/* Heart cursor */
-.cursor {
-  width: 24px;
-  height: 24px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09C13.09 4.01 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
-  background-size: contain;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease;
-}
-
-
-
-
-.theme-toggle {
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1000;
-  transition: transform 0.3s ease;
-}
-.theme-toggle:hover {
-  transform: scale(1.2);
-}
-
-/* Dark mode styles (only override background/text) */
-body.dark-mode {
-  background-color: #474444;
-  color: #dda7a7;
-}
-
-.dark-mode .card {
-  background-color: #2c2c2c;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode a,
-.dark-mode i {
-  color: #dda7a7;
-}
-
-
-/* Container & intro box */
-.container {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
-  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.avatar, .avatar-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  border: 4px solid #fff;
 }
 
 
+.container {
+  flex-direction: column;
+  padding: 2rem 1rem;
+}
 
 .intro-box {
-  background-color: #e6ffe6; /* light mint green */
+  background-color: #e6ffe6;
   border-radius: 25px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   padding: 3rem;
@@ -106,10 +59,9 @@ body.dark-mode {
 }
 
 .highlight {
-  color: #ff6b81; /* soft coral pink */
+  color: #ff6b81;
 }
 
-/* Navigation icons */
 .nav-icons {
   margin-top: 1.5rem;
   display: flex;
@@ -119,49 +71,78 @@ body.dark-mode {
 
 .nav-icons a {
   font-size: 2rem;
-  color: #5e3c29; /* soft brown */
+  color: #5e3c29;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .nav-icons a:hover {
-  color: #e49ab0; /* blush pink */
+  color: #e49ab0;
   transform: scale(1.2);
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .intro-box {
-    padding: 1.5rem;
-    border-radius: 20px;
-  }
 
-  .intro-text {
-    font-size: 1.4rem;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-  }
-
-  .nav-icons a {
-    font-size: 1.3rem;
-  }
-}
-
-.avatar-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.avatar-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 4px solid #fff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
+.about-card,
+.resume-card,
+.contact-card {
+  background-color: #e6ffed;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  text-align: center;
 }
 
 
+.resume-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #f48fb1;
+  color: white;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
 
+.resume-btn:hover {
+  background-color: #e45b88;
+}
+
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.contact-list li {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.contact-list a {
+  color: #e45b88;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* styles for Back Button */
+.back-btn {
+  margin-top: 2rem;
+  font-weight: bold;
+  color: #5e3c29;
+  background-color: #fff0f4;
+  padding: 0.6rem 1.2rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  border: 2px solid #e49ab0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: #e49ab0;
+  color: #fff;
+}
