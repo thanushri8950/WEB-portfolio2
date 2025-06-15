@@ -4,50 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resume</title>
-  
-  <style>
-    body {
-      background-color: #fff5f8;
-      font-family: 'Quicksand', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+  <link rel="stylesheet" href="styles.css">
 
-    .resume-card {
-      background-color: #e6ffed;
-      padding: 3rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      text-align: center;
-    }
-
-   
-    .resume-btn {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #f48fb1;
-      color: white;
-      border-radius: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .resume-btn:hover {
-      background-color: #e45b88;
-    }
-  </style>
 </head>
 <body>
   <div class="resume-card">
     <h1>My Resume</h1>
     <p>Download or view my resume below:</p>
     <a href="thanushri-resume.pdf" target="_blank" class="resume-btn"><i class="fas fa-file-pdf"></i> View Resume</a>
+    <br>
+    <button class="back-btn" onclick="goBack()" style="margin-top: 2rem;">← Back to Home</button>
   </div>
+<script>
+  function goBack() {
+    window.location.href = "index.html";
+  }
+</script>
+
 </body>
 </html>
